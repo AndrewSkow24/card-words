@@ -1,5 +1,4 @@
-const Button = () => {
-  const text = "Начать тренировку";
+const Button = ({ text }) => {
   return <button className="button">{text}</button>;
 };
 
