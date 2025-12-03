@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { words } from "../mock/data.js";
 import Loader from "./Loader.jsx";
+import Card from "./Card.jsx";
 
 const SColumn = styled.div`
   display: flex;
@@ -16,6 +17,21 @@ const CardsContent = styled.div`
 
 const Heading = styled.h2``;
 
-export default function Column({ title, loading }) {
-  return <SColumn>{loading ? <Loader /> : <Heading>{title}</Heading>}</SColumn>;
-}
+const Column = ({ title }) => {
+  const words_for_column = words.filter((item) => item.status == title);
+
+  console.log(words_for_column);
+
+  return (
+    <SColumn>
+      {title}
+      <CardsContent>
+        {words_for_column.map((item) => (
+          <Card card={item} key={item.id}></Card>
+        ))}
+      </CardsContent>
+    </SColumn>
+  );
+};
+
+export default Column;

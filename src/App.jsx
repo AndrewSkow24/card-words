@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <Header />
-      <Content loading={loading} />
+      <Content />
     </>
   );
 }

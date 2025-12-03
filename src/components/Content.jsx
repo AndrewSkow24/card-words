@@ -17,12 +17,12 @@ const ContentContainer = styled.div`
   overflow-x: scroll;
 `;
 
-const Content = ({ loading }) => {
+const Content = () => {
   return (
     <Container>
       <ContentContainer>
-        {["Новое", "В процессе", "Выучено"].map((title, i) => (
-          <Column loading={loading} title={title} key={i} />
+        {["Новое", "В процессе", "Выучено"].map((title) => (
+          <Column title={title} />
         ))}
       </ContentContainer>
     </Container>
